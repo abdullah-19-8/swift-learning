@@ -1,70 +1,72 @@
 import Foundation
+let filename = "paris.jpg"
+print(filename.hasSuffix(".jpg"))
 
-var greeting = "Hello, playground"
-greeting = "Hello, Abdullah"
+let number = 120
+print(number.isMultiple(of: 3))
 
-let character = "Asma"
-//character = "Abdullah" it can not be changed
+let goodDogs = true
+var gameOver = false
 
-var playerName = "Abdullah"
-print(playerName)
+let isMultiple = 120.isMultiple(of: 3)
 
-playerName = "Ahmed"
-print(playerName)
+var isAuthenticated = false
+isAuthenticated = !isAuthenticated
+print(isAuthenticated)
+isAuthenticated = !isAuthenticated
+print(isAuthenticated)
 
-playerName = "ShekhMohamed"
-print(playerName)
 
-let movie = """
-by using 3 quotes you can
-write as many line
-as you want
-"""
-// read without ()
-print(movie.count)
-// write with ()
-print(movie.uppercased())
+print(gameOver)
 
-let score = 10
-let reallyBig = 100000000
+gameOver.toggle()
+print(gameOver)
 
-let lowerScore = score - 2
-let higherScore = score + 10
-let doubledScore = score * 2
-let squaredScore = score * score
-let halvedScore = score / 2
-print(score)
 
-var counter = 10
-counter = counter + 5
-counter += 5
-print(counter)
+let firstPart = "Hello, "
+let secondPart = "world!"
+let greeting = firstPart + secondPart
 
-counter *= 2
-print(counter)
-counter -= 10
-print(counter)
-counter /= 2
-print(counter)
+let people = "Haters"
+let action = "hate"
+let lyric = people + " gonna " + action
+print(lyric)
 
-let numbers = 120
-print(numbers.isMultiple(of: 3))
-print(120.isMultiple(of: 3))
+// it is bad
+let luggageCode = "1" + "2" + "3" + "4" + "5" // 1+2 = 12 -> 12 + 3 = 123 -> 123 + 4 = 1234 -> 1234 + 5 = 12345
 
-let number = 0.1 + 0.2
-print(number)
+let quote = "Then he tapped a sign saying \"Believe\" and walked away."
 
-let a = 1
-let b = 2.0
-//let c = a + b     Binary operator '+' cannot be applied to operands of type 'Int' and 'Double'
-let c = a + Int(b)
-// let c = Double(a) + b
+// this is good
 
-let double1 = 3.1
-let double2 = 3131.3131
-let double3 = 3.0
-let int1 = 3
+let name = "Taylor"
+let age = 26
+let message = "Hello, my name is \(name) and I'm \(age) years old."
+print(message)
 
-var rating = 5.0
-rating *= 2
+// this kind of code is not allowed:
+//let number = 11
+//let missionMessage = "Apollo " + number + " landed on the moon."
+
+//You could ask Swift to treat the number like a string if you wanted, like this:
+
+let missionMessage = "Apollo " + String(number) + " landed on the moon."
+
+//It is still both faster and easier to read to use string interpolation:
+
+let missionMessage2 = "Apollo \(number) landed on the moon."
+
+//Tip: You can put calculations inside string interpolation if you want to. For example, this will print “5 x 5 is 25”:
+
+print("5 x 5 is \(5 * 5)")
+
+
+
+let cTemperatures = 25
+
+let fTemperatures = cTemperatures * 9 / 5 + 32
+
+print("Fahrenheit temp is \(fTemperatures) and Celsius temp is \(cTemperatures)")
+
+
 
