@@ -1,166 +1,46 @@
-var beatles = ["John", "Paul", "George", "Ringo"]
-let numbers = [4, 8, 15, 16, 23, 42]
-var temperatures = [25.3, 28.2, 26.4]
 
-print(beatles[0])
-print(numbers[1])
-print(temperatures[2])
+//let surname = "Lasso"
+//var score = 0
 
-beatles.append("Adrian")
-beatles.append("Allen")
-beatles.append("Adrian")
-beatles.append("Novall")
-beatles.append("Vivian")
+let surname : String = "Lasso"
+var scores : Int = 0
+var score : Double = 0
 
-//this kind of code isn’t allowed:
+//String holds text:
+let playerName: String = "Roy"
 
-//temperatures.append("Chris")
+//Int holds whole numbers:
+var luckyNumber: Int = 13
 
-//this kind of code isn’t allowed:
+//Double holds decimal numbers:
+let pi: Double = 3.141
 
-let firstBeatle = beatles[0]
-let firstNumber = numbers[0]
-//let notAllowed = firstBeatle + firstNumber // Binary operator '+' cannot be applied to operands of type 'String' and 'Int'
+//Bool holds either true or false:
+var isAuthenticated: Bool = true
 
+//Array holds lots of different values, all in the order you add them. This must be specialized, such as [String]:
+var album : [String] = ["Abdullah", "Asma","Test"]
 
-var scores = Array<Int>()
-scores.append(100)
-scores.append(80)
-scores.append(85)
-print(scores[1])
+//Dictionary holds lots of different values, where you get to decide how data should be accessed. This must be specialized, such as [String: Int]:
+var user: [String: String] = ["id": "@twostraws"]
 
-var albums = Array<String>()
-albums.append("Folklore")
-albums.append("Fearless")
-albums.append("Red")
+//Set holds lots of different values, but stores them in an order that’s optimized for checking what it contains. This must be specialized, such as Set<String>:
+var books: Set<String> = Set(["The Bluest Eye", "Foundation", "Girl, Woman, Other"])
 
-var albums2 = [String]()
-albums2.append("Folklore")
-albums2.append("Fearless")
-albums2.append("Red")
+var teams: [String] = [String]()
 
-print(albums.count)
+var cities: [String] = []
 
-var characters = ["Lana", "Pam", "Ray", "Sterling"]
-print(characters.count)
-
-characters.remove(at: 2)
-print(characters.count)
-
-characters.removeAll()
-print(characters.count)
-
-let bondMovies = ["Casino Royale", "Spectre", "No Time To Die"]
-print(bondMovies.contains("Frozen"))
-
-let cities = ["London", "Tokyo", "Rome", "Budapest"]
-print(cities.sorted())
-
-let presidents = ["Bush", "Obama", "Trump", "Biden"]
-print(presidents.reversed())
-
-print("--------------------------------------------------------------")
-
-// How to store and find data in dictionaries
-
-var employee = ["Taylor Swift", "Singer", "Nashville"]
-
-print("Name: \(employee[0])")
-print("Job title: \(employee[1])")
-print("Location: \(employee[2])")
-
-let employee2 = [
-    "name": "Taylor Swift",
-    "job": "Singer",
-    "location": "Nashville"
-]
-
-print(employee2["name"])
-print(employee2["job"])
-print(employee2["location"])
-
-print(employee2["name", default: "Unknown"])
-print(employee2["job", default: "Unknown"])
-print(employee2["location", default: "Unknown"])
+var clues = [String]()
 
 
-let hasGraduated = [
-    "Eric": false,
-    "Maeve": true,
-    "Otis": false,
-]
+print("---------------------------------------------")
 
-let olympics = [
-    2012: "London",
-    2016: "Rio de Janeiro",
-    2021: "Tokyo"
-]
+// Checkpoint 2
 
-print(olympics[2012, default: "Unknown"])
+let names = ["Abdullah","Asma","test","Asma"]
 
-var heights = [String: Int]()
-heights["Yao Ming"] = 229
-heights["Shaquille O'Neal"] = 216
-heights["LeBron James"] = 206
+let uniqueNames = Set(names)
 
-var archEnemies = [String: String]()
-archEnemies["Batman"] = "The Joker"
-archEnemies["Superman"] = "Lex Luthor"
+print(names.count, uniqueNames.count)
 
-archEnemies["Batman"] = "Penguin"
-
-let results = [
-    "english": 100,
-    "french": 85,
-    "geography": 75
-]
-
-let historyResult = results["history", default: 0]
-
-print(historyResult)
-
-print("--------------------------------------------------------------")
-
-// How to use sets for fast data lookup
-
-let people = Set(["Denzel Washington", "Tom Cruise", "Nicolas Cage", "Samuel L Jackson"])
-
-print(people)
-
-var peoples = Set<String>()
-peoples.insert("Denzel Washington")
-peoples.insert("Tom Cruise")
-peoples.insert("Nicolas Cage")
-peoples.insert("Samuel L Jackson")
-
-var setOfBlogCategories: Set<String> = ["Swift", "Debugging", "Xcode", "Workflow", "Optimization"]
-
-let (inserted, memberAfterInsert) = setOfBlogCategories.insert("Swift")
-if !inserted {
-    print("\(memberAfterInsert) already exists")
-}
-// Prints: "Swift already exists"
-
-print("--------------------------------------------------------------")
-
-// How to create and use enums
-
-enum Weekday {
-    case monday
-    case tuesday
-    case wednesday
-    case thursday
-    case friday
-}
-
-var day = Weekday.monday
-day = Weekday.tuesday
-day = Weekday.friday
-
-enum Weekdays {
-    case monday, tuesday, wednesday, thursday, friday
-}
-
-var days = Weekdays.monday
-days = .tuesday
-days = .friday
