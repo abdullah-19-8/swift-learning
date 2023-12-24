@@ -1,72 +1,166 @@
-import Foundation
-let filename = "paris.jpg"
-print(filename.hasSuffix(".jpg"))
+var beatles = ["John", "Paul", "George", "Ringo"]
+let numbers = [4, 8, 15, 16, 23, 42]
+var temperatures = [25.3, 28.2, 26.4]
 
-let number = 120
-print(number.isMultiple(of: 3))
+print(beatles[0])
+print(numbers[1])
+print(temperatures[2])
 
-let goodDogs = true
-var gameOver = false
+beatles.append("Adrian")
+beatles.append("Allen")
+beatles.append("Adrian")
+beatles.append("Novall")
+beatles.append("Vivian")
 
-let isMultiple = 120.isMultiple(of: 3)
+//this kind of code isn’t allowed:
 
-var isAuthenticated = false
-isAuthenticated = !isAuthenticated
-print(isAuthenticated)
-isAuthenticated = !isAuthenticated
-print(isAuthenticated)
+//temperatures.append("Chris")
 
+//this kind of code isn’t allowed:
 
-print(gameOver)
-
-gameOver.toggle()
-print(gameOver)
-
-
-let firstPart = "Hello, "
-let secondPart = "world!"
-let greeting = firstPart + secondPart
-
-let people = "Haters"
-let action = "hate"
-let lyric = people + " gonna " + action
-print(lyric)
-
-// it is bad
-let luggageCode = "1" + "2" + "3" + "4" + "5" // 1+2 = 12 -> 12 + 3 = 123 -> 123 + 4 = 1234 -> 1234 + 5 = 12345
-
-let quote = "Then he tapped a sign saying \"Believe\" and walked away."
-
-// this is good
-
-let name = "Taylor"
-let age = 26
-let message = "Hello, my name is \(name) and I'm \(age) years old."
-print(message)
-
-// this kind of code is not allowed:
-//let number = 11
-//let missionMessage = "Apollo " + number + " landed on the moon."
-
-//You could ask Swift to treat the number like a string if you wanted, like this:
-
-let missionMessage = "Apollo " + String(number) + " landed on the moon."
-
-//It is still both faster and easier to read to use string interpolation:
-
-let missionMessage2 = "Apollo \(number) landed on the moon."
-
-//Tip: You can put calculations inside string interpolation if you want to. For example, this will print “5 x 5 is 25”:
-
-print("5 x 5 is \(5 * 5)")
+let firstBeatle = beatles[0]
+let firstNumber = numbers[0]
+//let notAllowed = firstBeatle + firstNumber // Binary operator '+' cannot be applied to operands of type 'String' and 'Int'
 
 
+var scores = Array<Int>()
+scores.append(100)
+scores.append(80)
+scores.append(85)
+print(scores[1])
 
-let cTemperatures = 25
+var albums = Array<String>()
+albums.append("Folklore")
+albums.append("Fearless")
+albums.append("Red")
 
-let fTemperatures = cTemperatures * 9 / 5 + 32
+var albums2 = [String]()
+albums2.append("Folklore")
+albums2.append("Fearless")
+albums2.append("Red")
 
-print("Fahrenheit temp is \(fTemperatures) and Celsius temp is \(cTemperatures)")
+print(albums.count)
+
+var characters = ["Lana", "Pam", "Ray", "Sterling"]
+print(characters.count)
+
+characters.remove(at: 2)
+print(characters.count)
+
+characters.removeAll()
+print(characters.count)
+
+let bondMovies = ["Casino Royale", "Spectre", "No Time To Die"]
+print(bondMovies.contains("Frozen"))
+
+let cities = ["London", "Tokyo", "Rome", "Budapest"]
+print(cities.sorted())
+
+let presidents = ["Bush", "Obama", "Trump", "Biden"]
+print(presidents.reversed())
+
+print("--------------------------------------------------------------")
+
+// How to store and find data in dictionaries
+
+var employee = ["Taylor Swift", "Singer", "Nashville"]
+
+print("Name: \(employee[0])")
+print("Job title: \(employee[1])")
+print("Location: \(employee[2])")
+
+let employee2 = [
+    "name": "Taylor Swift",
+    "job": "Singer",
+    "location": "Nashville"
+]
+
+print(employee2["name"])
+print(employee2["job"])
+print(employee2["location"])
+
+print(employee2["name", default: "Unknown"])
+print(employee2["job", default: "Unknown"])
+print(employee2["location", default: "Unknown"])
 
 
+let hasGraduated = [
+    "Eric": false,
+    "Maeve": true,
+    "Otis": false,
+]
 
+let olympics = [
+    2012: "London",
+    2016: "Rio de Janeiro",
+    2021: "Tokyo"
+]
+
+print(olympics[2012, default: "Unknown"])
+
+var heights = [String: Int]()
+heights["Yao Ming"] = 229
+heights["Shaquille O'Neal"] = 216
+heights["LeBron James"] = 206
+
+var archEnemies = [String: String]()
+archEnemies["Batman"] = "The Joker"
+archEnemies["Superman"] = "Lex Luthor"
+
+archEnemies["Batman"] = "Penguin"
+
+let results = [
+    "english": 100,
+    "french": 85,
+    "geography": 75
+]
+
+let historyResult = results["history", default: 0]
+
+print(historyResult)
+
+print("--------------------------------------------------------------")
+
+// How to use sets for fast data lookup
+
+let people = Set(["Denzel Washington", "Tom Cruise", "Nicolas Cage", "Samuel L Jackson"])
+
+print(people)
+
+var peoples = Set<String>()
+peoples.insert("Denzel Washington")
+peoples.insert("Tom Cruise")
+peoples.insert("Nicolas Cage")
+peoples.insert("Samuel L Jackson")
+
+var setOfBlogCategories: Set<String> = ["Swift", "Debugging", "Xcode", "Workflow", "Optimization"]
+
+let (inserted, memberAfterInsert) = setOfBlogCategories.insert("Swift")
+if !inserted {
+    print("\(memberAfterInsert) already exists")
+}
+// Prints: "Swift already exists"
+
+print("--------------------------------------------------------------")
+
+// How to create and use enums
+
+enum Weekday {
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+}
+
+var day = Weekday.monday
+day = Weekday.tuesday
+day = Weekday.friday
+
+enum Weekdays {
+    case monday, tuesday, wednesday, thursday, friday
+}
+
+var days = Weekdays.monday
+days = .tuesday
+days = .friday
