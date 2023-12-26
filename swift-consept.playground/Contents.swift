@@ -1,168 +1,126 @@
-let platforms = ["iOS", "macOS", "tvOS", "watchOS"]
+import Foundation
 
-for os in platforms {
-    print("Swift works great on \(os).")
+func showWelcome() {
+    print("Welcome to my app!")
+    print("By default This prints out a conversion")
+    print("chart from centimeters to inches, but you")
+    print("can also set a custom range if you want.")
 }
 
-for i in 1...12 {
-    print("5 x \(i) is \(5 * i)")
-}
-
-for i in 1...12 {
-    print("The \(i) times table:")
-
-    for j in 1...12 {
-        print("  \(j) x \(i) is \(j * i)")
-    }
-
-    print()
-}
-
-for i in 1...5 {
-    print("Counting from 1 through 5: \(i)")
-}
-
-print()
-
-for i in 1..<5 {
-    print("Counting 1 up to 5: \(i)")
-}
-
-var lyric = "Haters gonna"
-
-for _ in 1...5 {
-    lyric += " hate"
-}
-
-print(lyric)
-
-let names = ["Sterling", "Cyril", "Lana", "Ray", "Pam"]
-
-for _ in names {
-    print("[CENSORED] is a secret agent!")
-}
-
-print(names[0])
-
-print(names[1...3])
-
-print(names[1...])
-
-
-print("-------------------------------------------------------")
-
-// How to use a while loop to repeat work
-
-var countdown = 10
-
-while countdown > 0 {
-    print("\(countdown)…")
-    countdown -= 1
-}
-
-print("Blast off!")
-
-let id = Int.random(in: 1...1000)
-
-let amount = Double.random(in: 0...1)
-
-
-// create an integer to store our roll
-var roll = 0
-
-// carry on looping until we reach 20
-while roll != 20 {
-    // roll a new dice and print what it was
-    roll = Int.random(in: 1...20)
-    print("I rolled a \(roll)")
-}
-
-// if we're here it means the loop ended – we got a 20!
-print("Critical hit!")
-
-let filenames = ["me.jpg", "work.txt", "sophie.jpg", "logo.psd"]
-
-for filename in filenames {
-    if filename.hasSuffix(".jpg") == false {
-        continue
-    }
-
-    print("Found picture: \(filename)")
-}
-
-let number1 = 4
-let number2 = 14
-var multiples = [Int]()
-
-for i in 1...100_000 {
-    if i.isMultiple(of: number1) && i.isMultiple(of: number2) {
-        multiples.append(i)
-
-        if multiples.count == 10 {
-            break
-        }
+func printTimesTables(number: Int) {
+    for i in 1...12 {
+        print("\(i) x \(number) is \(i * number)")
     }
 }
 
-print(multiples)
+printTimesTables(number: 5)
 
-let scores = [1, 8, 4, 3, 0, 5, 2]
-var count = 0
-
-for score in scores {
-    if score == 0 {
-        break
-    }
-
-    count += 1
+func test(text: String){
+    print(text)
 }
 
-print("You had \(count) scores before you got 0.")
+test(text: "test")
 
-let options = ["up", "down", "left", "right"]
-let secretCombination = ["up", "up", "right"]
+func rollDice() -> Int {
+    return Int.random(in: 1...6)
+}
 
-for option1 in options {
-    for option2 in options {
-        for option3 in options {
-            print("In loop")
-            let attempt = [option1, option2, option3]
+let result = rollDice()
+print(result)
 
-            if attempt == secretCombination {
-                print("The combination is \(attempt)!")
-            }
-        }
+func areLettersIdentical(string1: String, string2:String) -> Bool{
+     string1.sorted() == string2.sorted()
+}
+
+areLettersIdentical(string1: "abc", string2: "cab")
+areLettersIdentical(string1: "test", string2: "Rest")
+
+func pythagoras(a: Double, b: Double) -> Double {
+    sqrt(a * a + b * b)
+}
+
+let c = pythagoras(a: 3, b: 4)
+print(c)
+
+print("--------------------------------------------------")
+
+// How to return multiple values from functions
+
+//func getUser() -> [String] {
+//    ["Taylor", "Swift"]
+//}
+
+
+//let user = getUser()
+//print("Name: \(user[0]) \(user[1])")
+
+
+//func getUser() -> [String: String] {
+//    [
+//        "firstName": "Taylor",
+//        "lastName": "Swift"
+//    ]
+//}
+//
+//let user = getUser()
+//print("Name: \(user["firstName", default: "Anonymous"]) \(user["lastName", default: "Anonymous"])")
+
+//func getUser() -> (firstName: String, lastName: String) {
+//    (firstName: "Taylor", lastName: "Swift")
+//}
+
+func getUser() -> (firstName: String, lastName: String) {
+    ("Taylor", "Swift")
+}
+
+let user = getUser()
+print("Name: \(user.firstName) \(user.lastName)")
+print("Name: \(user.0) \(user.1)")
+
+let (firstName, _) = getUser()
+print("Name: \(firstName)")
+
+print("--------------------------------------------------")
+
+// How to customize parameter labels
+
+func rollDice(sides: Int, count: Int) -> [Int] {
+    // Start with an empty array
+    var rolls = [Int]()
+
+    // Roll as many dice as needed
+    for _ in 1...count {
+        // Add each result to our array
+        let roll = Int.random(in: 1...sides)
+        rolls.append(roll)
+    }
+
+    // Send back all the rolls
+    return rolls
+}
+
+let rolls = rollDice(sides: 6, count: 4)
+
+print(rolls)
+
+//func isUppercase(string: String) -> Bool {
+//    string == string.uppercased()
+//}
+//
+//let string = "HELLO, WORLD"
+//let resultt = isUppercase(string: string)
+
+func isUppercase(_ string: String) -> Bool {
+    string == string.uppercased()
+}
+
+let string = "HELLO, WORLD"
+let resultt = isUppercase(string)
+
+func printTimesTables(for number: Int) {
+    for i in 1...12 {
+        print("\(i) x \(number) is \(i * number)")
     }
 }
 
-outerLoop: for option1 in options {
-    for option2 in options {
-        for option3 in options {
-            print("In loop")
-            let attempt = [option1, option2, option3]
-
-            if attempt == secretCombination {
-                print("The combination is \(attempt)!")
-                break outerLoop
-            }
-        }
-        
-    }
-}
-
-print("----------------------------------------------------")
-
-// test 3
-
-for number in 1...100{
-    if number.isMultiple(of: 3) && number.isMultiple(of: 5){
-        print("FizzBuzz")
-    }else if number.isMultiple(of: 3){
-        print("Fizz")
-    }else if number.isMultiple(of: 5){
-        print("Buzz")
-    }else{
-        print(number)
-    }
-}
-
+printTimesTables(for: 5)
