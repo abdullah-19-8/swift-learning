@@ -1,130 +1,148 @@
-let sayHello = {(name: String) -> String in
-    "Hi \(name)!"
-}
-
-sayHello("rest")
-
-func greetUser(){
-    print("Hi There!")
-}
-
-var greetCopy: ()-> Void = greetUser
-
-
-func getUserData(for id: Int) -> String{
-    if id == 1989{
-        return "Taylor Swift"
-    }else{
-        return "Anonymous"
-    }
-}
-
-let data: (Int) -> String = getUserData
-let user = data(1989)
-print(user)
-
-let team = ["gloria","Suzanne", "Piper","Tiffany","Tasha"]
-let sortedTeam = team.sorted()
-print(sortedTeam)
-
-
-func captainFirstSorted(name1:String,name2:String)-> Bool{
-    if name1 == "Suzanne"{
-        return true
-    }else if name2 == "Suzanne"{
-        return false
-    }
-    return name1 < name2
-}
-
-//let captainFirstName = team.sorted(by: captainFirstSorted)
-//print(captainFirstName)
-let captainFirstTeam = team.sorted(by: {(name1:String, name2:String) -> Bool in
-    if name1 == "Suzanne"{
-        return true
-    }else if name2 == "Suzanne"{
-        return false
-    }
-    return name1 < name2
-})
-print(captainFirstTeam)
-
-print("---------------------------------------------------------------")
-
-// How to use trailing closure and shorthand syntax
-
-let captainFirstTeamm = team.sorted { name1, name2  in
-    if name1 == "Suzanne"{
-        return true
-    }else if name2 == "Suzanne"{
-        return false
-    }
-    return name1 < name2
-}
-
-let captainFirstTeammm = team.sorted{
-    if $0 == "Suzanne"{
-        return true
-    } else if $1 == "Suzanne"{
-        return false
-    }
+struct Album{
+    let title: String
+    let artist: String
+    let year: Int
     
-    return $0 < $1
+    func printSummary(){
+        print("\(title) (\(year)) by \(artist)")
+    }
 }
 
-let reverseTeam = team.sorted { $0 > $1 }
+let red = Album(title: "Red", artist: "Taylor Swift", year: 2012)
+let wings = Album(title: "Wings", artist: "BTS", year: 2016)
 
-let tOnly = team.filter { $0.hasPrefix("T") }
-print(tOnly)
+print(red.title)
+print(wings.artist)
 
-let uppercaseTeam = team.map { $0.uppercased() }
-print(uppercaseTeam)
+red.printSummary()
+wings.printSummary()
 
-func animate(duration: Double, animations: () -> Void) {
-    print("Starting a \(duration) second animation…")
-    animations()
-}
-
-print("---------------------------------------------------------------")
-
-// How to accept functions as parameters
-
-func makeArray(size: Int, using generator: () -> Int) -> [Int] {
-    var numbers = [Int]()
-
-    for _ in 0..<size {
-        let newNumber = generator()
-        numbers.append(newNumber)
+struct Employee {
+    let name: String
+    var vacationAllocated = 14
+    var vacationTaken = 0
+    
+    var vacationRemaining: Int {
+        get{
+            vacationAllocated - vacationTaken
+        }
+        
+        set{
+            vacationAllocated = vacationTaken + newValue
+        }
     }
 
-    return numbers
+//    mutating func takeVacation(days: Int) {
+//        if vacationRemaining > days {
+//            vacationRemaining -= days
+//            print("I'm going on vacation!")
+//            print("Days remaining: \(vacationRemaining)")
+//        } else {
+//            print("Oops! There aren't enough days remaining.")
+//        }
+//    }
 }
 
-func doImportantWork(first: () -> Void, second: () -> Void, third: () -> Void) {
-    print("About to start first work")
-    first()
-    print("About to start second work")
-    second()
-    print("About to start third work")
-    third()
-    print("Done!")
+var archer = Employee(name: "Sterling Archer", vacationAllocated: 14)
+archer.vacationTaken += 4
+archer.vacationRemaining = 5
+print(archer.vacationAllocated)
+//print(archer.vacationRemaining)
+
+
+//
+//archer.vacationRemaining -= 5
+//print(archer.vacationRemaining)
+//archer.vacationRemaining -= 3
+//print(archer.vacationRemaining)
+
+struct Game {
+    var score = 0 {
+        didSet{
+            print("Score is now \(score)")
+        }
+    }
 }
 
-doImportantWork {
-    print("This is the first work")
-} second: {
-    print("This is the second work")
-} third: {
-    print("This is the third work")
+var game = Game()
+game.score += 10
+game.score -= 3
+game.score += 1
+
+
+struct App {
+    var contacts = [String]() {
+        willSet {
+            print("Current value is: \(contacts)")
+            print("New value will be: \(newValue)")
+        }
+
+        didSet {
+            print("There are now \(contacts.count) contacts.")
+            print("Old value was \(oldValue)")
+        }
+    }
 }
 
-print("--------------------------------------------------")
+var app = App()
+app.contacts.append("Adrian E")
+app.contacts.append("Allen W")
+app.contacts.append("Ish S")
 
-// Checkpoint 5
 
-let luckyNumbers = [7, 4, 38, 21, 16, 15, 12, 33, 31, 49]
-var even = [Int]()
 
-let result = luckyNumbers.filter {!$0.isMultiple(of: 2)}.sorted{ $1 > $0}.map{ "\($0) is a lucky number " }.joined(separator:"\n")
-print(result)
+// How to create custom initializers
 
+struct Player {
+    let name: String
+    let number: Int
+
+    init(name: String) {
+            self.name = name
+            number = Int.random(in: 1...99)
+        }
+    }
+
+let player = Player(name: "Megan R")
+print(player.number)
+
+//struct Eemployee {
+//    var name: String
+//    var yearsActive = 0
+//
+//    init() {
+//        self.name = "Anonymous"
+//        print("Creating an anonymous employee…")
+//    }
+//}
+
+//let roslin = Eemployee(name: "Laura Roslin")
+
+struct Eemployee {
+    var name: String
+    var yearsActive = 0
+}
+
+extension Eemployee {
+    init() {
+        self.name = "Anonymous"
+        print("Creating an anonymous employee…")
+    }
+}
+
+// creating a named employee now works
+let roslin = Eemployee(name: "Laura Roslin")
+
+// as does creating an anonymous employee
+let anon = Eemployee()
+
+struct Student {
+    var name: String
+    var bestFriend: String
+
+    init(name: String, bestFriend: String) {
+        print("Enrolling \(name) in class…")
+        self.name = name
+        self.bestFriend = bestFriend
+    }
+}
