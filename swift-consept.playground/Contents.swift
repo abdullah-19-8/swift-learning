@@ -1,120 +1,130 @@
-//func printTimesTables(for number: Int, end: Int) {
-//    for i in 1...end {
-//        print("\(i) x \(number) is \(i * number)")
-//    }
-//}
-//
-//printTimesTables(for: 5, end: 20)
+let sayHello = {(name: String) -> String in
+    "Hi \(name)!"
+}
 
-func printTimesTables(for number: Int, end: Int = 12) {
-    for i in 1...end {
-        print("\(i) x \(number) is \(i * number)")
+sayHello("rest")
+
+func greetUser(){
+    print("Hi There!")
+}
+
+var greetCopy: ()-> Void = greetUser
+
+
+func getUserData(for id: Int) -> String{
+    if id == 1989{
+        return "Taylor Swift"
+    }else{
+        return "Anonymous"
     }
 }
 
-printTimesTables(for: 5, end: 20)
-printTimesTables(for: 8)
+let data: (Int) -> String = getUserData
+let user = data(1989)
+print(user)
 
-var characters = ["Lana", "Pam", "Ray", "Sterling"]
-print(characters.count)
-characters.removeAll(keepingCapacity: true)
-print(characters.count)
+let team = ["gloria","Suzanne", "Piper","Tiffany","Tasha"]
+let sortedTeam = team.sorted()
+print(sortedTeam)
 
-print("---------------------------------------------------")
 
-// How to handle errors in functions
-
-enum PasswordError: Error {
-    case short, obvious
+func captainFirstSorted(name1:String,name2:String)-> Bool{
+    if name1 == "Suzanne"{
+        return true
+    }else if name2 == "Suzanne"{
+        return false
+    }
+    return name1 < name2
 }
 
-func checkPassword(_ password: String) throws -> String {
-    if password.count < 5 {
-        throw PasswordError.short
+//let captainFirstName = team.sorted(by: captainFirstSorted)
+//print(captainFirstName)
+let captainFirstTeam = team.sorted(by: {(name1:String, name2:String) -> Bool in
+    if name1 == "Suzanne"{
+        return true
+    }else if name2 == "Suzanne"{
+        return false
+    }
+    return name1 < name2
+})
+print(captainFirstTeam)
+
+print("---------------------------------------------------------------")
+
+// How to use trailing closure and shorthand syntax
+
+let captainFirstTeamm = team.sorted { name1, name2  in
+    if name1 == "Suzanne"{
+        return true
+    }else if name2 == "Suzanne"{
+        return false
+    }
+    return name1 < name2
+}
+
+let captainFirstTeammm = team.sorted{
+    if $0 == "Suzanne"{
+        return true
+    } else if $1 == "Suzanne"{
+        return false
     }
     
-    if password == "12345"{
-        throw PasswordError.obvious
+    return $0 < $1
+}
+
+let reverseTeam = team.sorted { $0 > $1 }
+
+let tOnly = team.filter { $0.hasPrefix("T") }
+print(tOnly)
+
+let uppercaseTeam = team.map { $0.uppercased() }
+print(uppercaseTeam)
+
+func animate(duration: Double, animations: () -> Void) {
+    print("Starting a \(duration) second animation…")
+    animations()
+}
+
+print("---------------------------------------------------------------")
+
+// How to accept functions as parameters
+
+func makeArray(size: Int, using generator: () -> Int) -> [Int] {
+    var numbers = [Int]()
+
+    for _ in 0..<size {
+        let newNumber = generator()
+        numbers.append(newNumber)
     }
-    
-    if password.count < 8 {
-           return "OK"
-       } else if password.count < 10 {
-           return "Good"
-       } else {
-           return "Excellent"
-       }
-}
-do {
-    let result = try checkPassword("1234")
-    print("Password rating: \(result)")
-} catch PasswordError.short {
-    print("Please use a longer password.")
-} catch PasswordError.obvious {
-    print("I have the same combination on my luggage!")
-} catch {
-    print("There was an error.")
+
+    return numbers
 }
 
-do {
-    let result = try checkPassword("12345")
-    print("Password rating: \(result)")
-} catch PasswordError.short {
-    print("Please use a longer password.")
-} catch PasswordError.obvious {
-    print("I have the same combination on my luggage!")
-} catch {
-    print("There was an error.")
+func doImportantWork(first: () -> Void, second: () -> Void, third: () -> Void) {
+    print("About to start first work")
+    first()
+    print("About to start second work")
+    second()
+    print("About to start third work")
+    third()
+    print("Done!")
 }
 
-do {
-    let result = try checkPassword("1234567")
-    print("Password rating: \(result)")
-} catch {
-    print("There was an error.")
-}
-do {
-    let result = try checkPassword("123456789")
-    print("Password rating: \(result)")
-} catch {
-    print("There was an error.")
-}
-do {
-    let result = try checkPassword("1234567890")
-    print("Password rating: \(result)")
-} catch {
-    print("There was an error.")
+doImportantWork {
+    print("This is the first work")
+} second: {
+    print("This is the second work")
+} third: {
+    print("This is the third work")
 }
 
-// Checkpoint 4
+print("--------------------------------------------------")
 
-enum NumberError : Error{
-    case lessOrGreaterThan, noSqrt
-}
+// Checkpoint 5
 
-func squerRoot(of number: Int) throws -> Int{
-    if number < 1 || number > 10000{
-        throw NumberError.lessOrGreaterThan
-    }
-    for num in 1...number {
-        if(num * num == number){
-            return num
-        }
-    }
-    throw NumberError.noSqrt
-}
+let luckyNumbers = [7, 4, 38, 21, 16, 15, 12, 33, 31, 49]
+var even = [Int]()
 
-let number = 10000
+let result = luckyNumbers.filter {!$0.isMultiple(of: 2)}.sorted{ $1 > $0}.map{ "\($0) is a lucky number " }.joined(separator:"\n")
+print(result)
 
-do{
-
-    let result = try squerRoot(of: number)
-    print(result)
-
-} catch NumberError.lessOrGreaterThan {
-    print("number should be in range 1 to 1000")
-} catch NumberError.noSqrt{
-    print("this number has no sqrt")
-} catch{
-    print("there are an error")
-}
