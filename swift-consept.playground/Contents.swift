@@ -1,261 +1,140 @@
-import Foundation
+let opposites = [
+    "Mario": "Wario",
+    "Luigi": "Waluigi"
+]
 
-struct Car: Vehicles {
-    let name = "Car"
-    var currentPassengers = 1
-    func estimateTime(for distance: Int) -> Int {
-        distance / 50
+let peachOpposite = opposites["Peach"]
+
+if let marioOpposite = opposites["Mario"] {
+    print("Mario's opposite is \(marioOpposite)")
+}
+
+var username: String? = nil
+
+if let unwrappedName = username {
+    print("We got a user: \(unwrappedName)")
+} else {
+    print("The optional was empty.")
+}
+
+func square(number: Int) -> Int {
+    number * number
+}
+
+var number: Int? = nil
+//print(square(number: number))
+
+if let unwrappedNumber = number {
+    print(square(number: unwrappedNumber))
+}
+
+func getUsername() -> String? {
+    "Taylor"
+}
+
+if let username = getUsername() {
+    print("Username is \(username)")
+} else {
+    print("No username")
+}
+
+if let number = number {
+    print(square(number: number))
+}
+
+// We can actually write this:
+if let number {
+    print(square(number: number))
+}
+
+// How to unwrap optionals with guard
+func printSquare(of number: Int?) {
+    guard let number = number else {
+        print("Missing input")
+
+        // 1: We *must* exit the function here
+        return
     }
 
-    func travel(distance: Int) {
-        print("I'm driving \(distance)km.")
-    }
-
-    func openSunroof() {
-        print("It's a nice day!")
-    }
+    // 2: `number` is still available outside of `guard`
+    print("\(number) x \(number) is \(number * number)")
 }
 
-func commute(distance: Int, using vehicle: Vehicles) {
-    if vehicle.estimateTime(for: distance) > 100 {
-        print("That's too slow! I'll try a different vehicle.")
-    } else {
-        vehicle.travel(distance: distance)
-    }
+var myVar: Int? = 3
+
+if let unwrapped = myVar {
+    print("Run if myVar has a value inside")
 }
 
-let car = Car()
-commute(distance: 100, using: car)
-
-struct Bicycle: Vehicles {
-    let name = "Bicycle"
-    var currentPassengers = 1
-    
-    func estimateTime(for distance: Int) -> Int {
-        distance / 10
-    }
-
-    func travel(distance: Int) {
-        print("I'm cycling \(distance)km.")
-    }
-}
-
-let bike = Bicycle()
-commute(distance: 50, using: bike)
-
-protocol Vehicles {
-    var name: String { get }
-    var currentPassengers: Int { get set }
-    func estimateTime(for distance: Int) -> Int
-    func travel(distance: Int)
-}
-
-func getTravelEstimates(using vehicles: [Vehicles], distance: Int) {
-    for vehicle in vehicles {
-        let estimate = vehicle.estimateTime(for: distance)
-        print("\(vehicle.name): \(estimate) hours to travel \(distance)km")
-    }
-}
-
-getTravelEstimates(using: [car, bike], distance: 150)
-
-//
-//struct Book {
-//    var name: String
-//}
-//
-//func buy(_ book: Book) {
-//    print("I'm buying \(book.name)")
-//}
-
-protocol Purchaseable {
-    var name: String { get set }
-}
-
-struct Book: Purchaseable {
-    var name: String
-    var author: String
-}
-
-struct Movie: Purchaseable {
-    var name: String
-    var actors: [String]
-}
-
-struct Cars: Purchaseable {
-    var name: String
-    var manufacturer: String
-}
-
-struct Coffee: Purchaseable {
-    var name: String
-    var strength: Int
-}
-
-func buy(_ item: Purchaseable) {
-    print("I'm buying \(item.name)")
-}
-
-// How to use opaque return types
-
-//func getRandomNumber() -> Int {
-//    Int.random(in: 1...6)
-//}
-//
-//func getRandomBool() -> Bool {
-//    Bool.random()
+//guard let unwrapped = myVar else {
+//    print("Run if myVar doesn't have a value inside")
 //}
 
-func getRandomNumber() -> some Equatable {
-    Int.random(in: 1...6)
+func getMeaningOfLife() -> Int? {
+    42
 }
 
-func getRandomBool() -> some Equatable {
-    Bool.random()
-}
-
-// extensions
-
-var quote = "   The truth is rarely pure and never simple   "
-let trimmed = quote.trimmingCharacters(in: .whitespacesAndNewlines)
-
-extension String {
-    func trimmed() -> String {
-        self.trimmingCharacters(in: .whitespacesAndNewlines)
-    }
-    
-    mutating func trim(){
-        self = self.trimmed()
-    }
-    
-    var lines: [String] {
-        self.components(separatedBy: .newlines)
+func printMeaningOfLife(){
+    guard let name = getMeaningOfLife() else{
+        return
     }
 }
 
-let trimmed2 = quote.trimmed()
+// How to unwrap optionals with nil coalescing
 
-print(trimmed)
-print(trimmed2)
+let captains = [
+    "Enterprise": "Picard",
+    "Voyager": "Janeway",
+    "Defiant": "Sisko"
+]
 
-quote.trim()
+let new = captains["Serenity"] ?? "N/A"
 
+let tvShows = ["Archer", "Babylon 5", "Ted Lasso"]
+let favorite = tvShows.randomElement() ?? "None"
 
-let lyrics = """
-But I keep cruising
-Can't stop, won't stop moving
-It's like I got this music in my mind
-Saying it's gonna be alright
-"""
-
-print(lyrics.lines.count)
-
-struct Books {
+struct Book {
     let title: String
-    let pageCount: Int
-    let readingHours: Int
+    let author: String?
 }
 
-extension Books{
-    init(title: String, pageCount: Int) {
-            self.title = title
-            self.pageCount = pageCount
-            self.readingHours = pageCount / 50
-        }
+//let book = Book(title: "Beowulf", author: nil)
+//let author = book.author ?? "Anonymous"
+//print(author)
+
+var book: Book? = nil
+let author = book?.author?.first?.uppercased() ?? "A"
+print(author)
+
+
+let input = ""
+let numbers = Int(input) ?? 0
+print(numbers)
+
+// How to handle multiple optionals using optional chaining
+
+let names = ["Arya", "Bran", "Robb", "Sansa"]
+
+let chosen = names.randomElement()?.uppercased() ?? "No one"
+print("Next in line: \(chosen)")
+
+//How to handle function failure with optionals
+
+enum UserError: Error {
+    case badID, networkFailed
 }
 
-let lotr = Books(title: "Lord of the Rings", pageCount: 1178, readingHours: 24)
-
-// How to create and use protocol extensions
-
-let guests = ["Mario", "Luigi", "Peach"]
-
-if guests.isEmpty == false {
-    print("Guest count: \(guests.count)")
+func getUser(id: Int) throws -> String {
+    throw UserError.networkFailed
 }
 
-if !guests.isEmpty {
-    print("Guest count: \(guests.count)")
+if let user = try? getUser(id: 23) {
+    print("User: \(user)")
 }
 
-extension Collection {
-    var isNotEmpty: Bool{
-        isEmpty == false
-    }
-}
+let user = (try? getUser(id: 23)) ?? "Anonymous"
+print(user)
 
-if guests.isNotEmpty {
-    print("Guest count: \(guests.count)")
-}
+// Checkpoint 9
 
-
-protocol Person {
-    var name: String { get }
-    func sayHello()
-}
-
-extension Person {
-    func sayHello() {
-        print("Hi, I'm \(name)")
-    }
-}
-
-struct Employee: Person {
-    let name: String
-}
-
-let taylor = Employee(name: "Taylor Swift")
-taylor.sayHello()
-
-let numbers = [4, 8, 15, 16]
-let allEven = numbers.allSatisfy { $0.isMultiple(of: 2) }
-
-let numbers2 = Set([4, 8, 15, 16])
-let allEven2 = numbers2.allSatisfy { $0.isMultiple(of: 2) }
-
-let numbers3 = ["four": 4, "eight": 8, "fifteen": 15, "sixteen": 16]
-let allEven3 = numbers3.allSatisfy { $0.value.isMultiple(of: 2) }
-
-print(allEven)
-print(allEven2)
-print(allEven3)
-
-
-// checkpoint 8
-
-protocol Building{
-    var roomNumbers: Int { get }
-    var cost: Int { get }
-    var agent: String { get }
-    func summary()
-}
-
-extension Building {
-    func summary() {
-        print("Room numbers: \(roomNumbers) Cost: \(cost) Agent: \(agent)")
-    }
-}
-
-struct House: Building{
-    var roomNumbers: Int
-    
-    var cost: Int
-    
-    var agent: String
-    
-    
-}
-
-let house = House(roomNumbers: 3, cost: 500, agent: "Abdullah")
-
-house.summary()
-
-struct Office: Building{
-    var roomNumbers: Int
-    
-    var cost: Int
-    
-    var agent: String
-    
-    
-}
+func returnOneNumber(of number: [Int]?) -> Int{ number?.randomElement() ?? Int.random(in: 1...100) }
