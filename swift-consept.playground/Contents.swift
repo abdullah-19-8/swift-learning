@@ -138,3 +138,6 @@ print(user)
 // Checkpoint 9
 
 func returnOneNumber(of number: [Int]?) -> Int{ number?.randomElement() ?? Int.random(in: 1...100) }
+
+returnOneNumber(of: [1,2,3,4,5,6,7,8,9])
+returnOneNumber(of: nil)
