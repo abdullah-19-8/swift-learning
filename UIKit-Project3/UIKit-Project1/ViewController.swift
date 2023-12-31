@@ -27,6 +27,11 @@ class ViewController: UITableViewController {
             }
         }
         pictures.sort()
+        
+        navigationItem.largeTitleDisplayMode = .never
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+        
     }
     
     
@@ -49,6 +54,16 @@ class ViewController: UITableViewController {
             vc.selectedImage = pictures[indexPath.row]
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    @objc func shareTapped() {
+        let appURL = URL(string: "your_app_store_url")!
+    
+        let vc = UIActivityViewController(activityItems: [appURL], applicationActivities: [])
+        
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        
+        present(vc, animated: true)
     }
 }
 
