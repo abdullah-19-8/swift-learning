@@ -21,18 +21,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        countries.append("estonia")
-//        countries.append("france")
-//        countries.append("germany")
-//        countries.append("ireland")
-//        countries.append("italy")
-//        countries.append("monaco")
-//        countries.append("nigeria")
-//        countries.append("poland")
-//        countries.append("russia")
-//        countries.append("spain")
-//        countries.append("uk")
-//        countries.append("us")
+        //        countries.append("estonia")
+        //        countries.append("france")
+        //        countries.append("germany")
+        //        countries.append("ireland")
+        //        countries.append("italy")
+        //        countries.append("monaco")
+        //        countries.append("nigeria")
+        //        countries.append("poland")
+        //        countries.append("russia")
+        //        countries.append("spain")
+        //        countries.append("uk")
+        //        countries.append("us")
         
         countries += [
             "estonia", "france", "germany",
@@ -46,12 +46,16 @@ class ViewController: UIViewController {
         button1.layer.borderWidth = 1
         button2.layer.borderWidth = 1
         button3.layer.borderWidth = 1
-            
+        
         button1.layer.borderColor = UIColor.lightGray.cgColor
         button2.layer.borderColor = UIColor.lightGray.cgColor
         button3.layer.borderColor = UIColor.lightGray.cgColor
         
         askQuestions()
+        
+        navigationItem.largeTitleDisplayMode = .never
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showScore))
     }
     
     func askQuestions(action: UIAlertAction! = nil) {
@@ -95,13 +99,13 @@ class ViewController: UIViewController {
             present(ac, animated: true)
         }
         
-        
-        
-       
-        
-        
-        
-        
     }
+    
+    @objc func showScore() {
+        let ac = UIAlertController(title: nil, message: "Your Score is \(score)", preferredStyle: .alert)
+        
+        ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(ac, animated: true)
+    }
+    
 }
-
