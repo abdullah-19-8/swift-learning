@@ -1,32 +1,25 @@
 //
 //  DetailViewController.swift
-//  UIKit-Project1
+//  UIKit-Project1-3
 //
-//  Created by Abdulla Ahmad on 12/30/23.
+//  Created by Abdulla Ahmad on 1/1/24.
 //
 
 import UIKit
 
 class DetailViewController: UIViewController {
-    
-    
     @IBOutlet var imageView: UIImageView!
-    
     var selectedImage: String?
-    var totalOfImages: Int?
-    var selectedImagePosetion: Int?
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "Picture \(selectedImagePosetion ?? 0) in \(totalOfImages ?? 0)"
         navigationItem.largeTitleDisplayMode = .never
         
         if let imageToLoad = selectedImage{
             imageView.image = UIImage(named: imageToLoad)
         }
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +30,17 @@ class DetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnTap = false
+    }
+    
+    @objc func shareTapped() {
+        
+    
+    
+        let vc = UIActivityViewController(activityItems: [selectedImage ?? "", UIImage(named: selectedImage ?? "") ?? UIImage()], applicationActivities: [])
+        
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        
+        present(vc, animated: true)
     }
     
 
