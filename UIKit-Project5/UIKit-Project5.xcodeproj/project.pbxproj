@@ -13,6 +13,7 @@
 		87E3AF682B4629A60030E25C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E3AF662B4629A60030E25C /* Main.storyboard */; };
 		87E3AF6A2B4629A80030E25C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87E3AF692B4629A80030E25C /* Assets.xcassets */; };
 		87E3AF6D2B4629A80030E25C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E3AF6B2B4629A80030E25C /* LaunchScreen.storyboard */; };
+		87E3AF752B462FB40030E25C /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 87E3AF742B462FB40030E25C /* start.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		87E3AF692B4629A80030E25C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87E3AF6C2B4629A80030E25C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87E3AF6E2B4629A80030E25C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87E3AF742B462FB40030E25C /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				87E3AF622B4629A60030E25C /* SceneDelegate.swift */,
 				87E3AF642B4629A60030E25C /* ViewController.swift */,
 				87E3AF662B4629A60030E25C /* Main.storyboard */,
+				87E3AF742B462FB40030E25C /* start.txt */,
 				87E3AF692B4629A80030E25C /* Assets.xcassets */,
 				87E3AF6B2B4629A80030E25C /* LaunchScreen.storyboard */,
 				87E3AF6E2B4629A80030E25C /* Info.plist */,
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87E3AF6D2B4629A80030E25C /* LaunchScreen.storyboard in Resources */,
+				87E3AF752B462FB40030E25C /* start.txt in Resources */,
 				87E3AF6A2B4629A80030E25C /* Assets.xcassets in Resources */,
 				87E3AF682B4629A60030E25C /* Main.storyboard in Resources */,
 			);
