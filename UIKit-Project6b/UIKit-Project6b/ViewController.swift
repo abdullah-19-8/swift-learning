@@ -48,6 +48,8 @@ class ViewController: UIViewController {
         view.addSubview(label4)
         view.addSubview(label5)
         
+        view.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.5, constant: 50).isActive = true
+        
 //        let viewsDectionary = ["label1": label1, "label2": label2, "label3": label3, "label4": label4, "label5": label5]
 //        
 //        for label in viewsDectionary.keys {
@@ -61,9 +63,9 @@ class ViewController: UIViewController {
         var previous: UILabel?
         
         for label in [label1, label2, label3, label4, label5] {
-            label.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-            label.heightAnchor.constraint(equalToConstant: 88).isActive = true
-            
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+            label.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.09, constant: 40).isActive = true
+            label.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.5, constant: 50).isActive = true
             if let previous = previous {
                 label.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
             } else{
@@ -71,6 +73,7 @@ class ViewController: UIViewController {
             }
             
             previous = label
+            
         }
     }
 }
