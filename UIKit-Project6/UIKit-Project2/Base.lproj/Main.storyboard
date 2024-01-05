@@ -18,6 +18,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FC-CW-7Ez">
                                 <rect key="frame" x="84.666666666666686" y="153" width="224" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1FC-CW-7Ez" secondAttribute="height" multiplier="112:57" id="oeL-s5-glV"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="us"/>
                                 <connections>
@@ -26,6 +29,9 @@
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oip-IA-eWH">
                                 <rect key="frame" x="84.666666666666686" y="323" width="224" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Oip-IA-eWH" secondAttribute="height" multiplier="112:57" id="OTS-4v-BxN"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="us"/>
                                 <connections>
@@ -34,14 +40,18 @@
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIF-4J-qpa">
                                 <rect key="frame" x="84.666666666666686" y="490" width="224" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OIF-4J-qpa" secondAttribute="height" multiplier="112:57" id="HZ5-TB-1sQ"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="us"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ygQ-Gm-FwE"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="200" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="FeY-Cg-S9j">
-                                <rect key="frame" x="121" y="767" width="151" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9P8-5V-chk">
+                                <rect key="frame" x="146" y="797" width="100" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -50,14 +60,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FeY-Cg-S9j" secondAttribute="bottom" constant="30" id="09e-iv-MmL"/>
                             <constraint firstItem="1FC-CW-7Ez" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1xO-uH-dua"/>
                             <constraint firstItem="OIF-4J-qpa" firstAttribute="top" secondItem="Oip-IA-eWH" secondAttribute="bottom" constant="53" id="2T5-oa-o3E"/>
                             <constraint firstItem="1FC-CW-7Ez" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="5Xb-RU-bSb"/>
                             <constraint firstItem="OIF-4J-qpa" firstAttribute="centerX" secondItem="Oip-IA-eWH" secondAttribute="centerX" id="7NJ-B2-ic7"/>
-                            <constraint firstItem="FeY-Cg-S9j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="121" id="ICy-yK-i3F"/>
-                            <constraint firstItem="FeY-Cg-S9j" firstAttribute="centerX" secondItem="OIF-4J-qpa" secondAttribute="centerX" id="a2E-33-9pm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="OIF-4J-qpa" secondAttribute="bottom" constant="20" id="XCe-ZT-Py5"/>
+                            <constraint firstItem="OIF-4J-qpa" firstAttribute="height" secondItem="Oip-IA-eWH" secondAttribute="height" id="XWN-do-DQs"/>
                             <constraint firstItem="Oip-IA-eWH" firstAttribute="top" secondItem="1FC-CW-7Ez" secondAttribute="bottom" constant="56" id="gRC-9m-ZwD"/>
+                            <constraint firstItem="Oip-IA-eWH" firstAttribute="height" secondItem="1FC-CW-7Ez" secondAttribute="height" id="tf0-eA-XuG"/>
                             <constraint firstItem="Oip-IA-eWH" firstAttribute="centerX" secondItem="1FC-CW-7Ez" secondAttribute="centerX" id="wha-mv-aZn"/>
                         </constraints>
                     </view>
@@ -66,7 +76,7 @@
                         <outlet property="button1" destination="1FC-CW-7Ez" id="Q0S-KY-4Lr"/>
                         <outlet property="button2" destination="Oip-IA-eWH" id="Rm7-H3-gWe"/>
                         <outlet property="button3" destination="OIF-4J-qpa" id="FWX-iT-y1J"/>
-                        <outlet property="scoreLabel" destination="FeY-Cg-S9j" id="uzc-Ew-yiK"/>
+                        <outlet property="scoreLabel" destination="9P8-5V-chk" id="pgX-E9-4AO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
