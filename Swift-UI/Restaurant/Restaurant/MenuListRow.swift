@@ -1,6 +1,6 @@
 //
 //  MenuListRow.swift
-//  Menu
+//  Restaurant
 //
 //  Created by Abdulla Ahmad on 7/7/24.
 //
