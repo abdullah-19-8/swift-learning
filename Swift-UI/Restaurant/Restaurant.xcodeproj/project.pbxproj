@@ -17,6 +17,7 @@
 		8724BF0A2C3AF19300089183 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8724BF092C3AF19300089183 /* GalleryView.swift */; };
 		8724BF0C2C3AF1F600089183 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8724BF0B2C3AF1F600089183 /* MenuView.swift */; };
 		8724BF102C3AF2C200089183 /* MenuListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8724BF0F2C3AF2C200089183 /* MenuListRow.swift */; };
+		8724BF122C3BBCEE00089183 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8724BF112C3BBCEE00089183 /* PhotoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		8724BF092C3AF19300089183 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		8724BF0B2C3AF1F600089183 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		8724BF0F2C3AF2C200089183 /* MenuListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListRow.swift; sourceTree = "<group>"; };
+		8724BF112C3BBCEE00089183 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				8724BF052C3AF0EE00089183 /* MenuItem.swift */,
 				8724BF072C3AF17C00089183 /* AboutView.swift */,
 				8724BF092C3AF19300089183 /* GalleryView.swift */,
+				8724BF112C3BBCEE00089183 /* PhotoView.swift */,
 				8724BF0B2C3AF1F600089183 /* MenuView.swift */,
 				8724BF0F2C3AF2C200089183 /* MenuListRow.swift */,
 				8724BEF72C3AF07600089183 /* Assets.xcassets */,
@@ -158,6 +161,7 @@
 				8724BF0C2C3AF1F600089183 /* MenuView.swift in Sources */,
 				8724BF0A2C3AF19300089183 /* GalleryView.swift in Sources */,
 				8724BEF62C3AF07500089183 /* MainView.swift in Sources */,
+				8724BF122C3BBCEE00089183 /* PhotoView.swift in Sources */,
 				8724BEF42C3AF07500089183 /* RestaurantApp.swift in Sources */,
 				8724BF042C3AF0D700089183 /* DataService.swift in Sources */,
 				8724BF102C3AF2C200089183 /* MenuListRow.swift in Sources */,
