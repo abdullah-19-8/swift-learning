@@ -13,22 +13,27 @@ struct CityView: View {
     var dataServices = DataServices()
     var body: some View {
         NavigationStack{
-            ScrollView{
-                VStack {
-                    ForEach(cities) {city in
-                        
-                        NavigationLink{
-                            AttractionView(attractions: city.attractions)
-                        } label: {
-                            CityCard(city: city)
+            ZStack{
+                ScrollView(showsIndicators:false ){
+                    VStack {
+                        ForEach(cities) {city in
+                            
+                            NavigationLink{
+                                AttractionView(attractions: city.attractions)
+                            } label: {
+                                CityCard(city: city)
+                                    .padding(.bottom, 20)
+                            }
                         }
+                        .padding(.horizontal)
+                    }
+                    .ignoresSafeArea()
+                    .onAppear{
+                        cities = dataServices.getData()
                     }
                 }
-                .padding()
-                .onAppear{
-                    cities = dataServices.getData()
-                }
             }
+            
         }
     }
 }

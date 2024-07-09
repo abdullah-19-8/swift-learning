@@ -17,6 +17,7 @@
 		875919D22C3D2E4200641B63 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875919D12C3D2E4200641B63 /* City.swift */; };
 		875919D42C3D2F7300641B63 /* Attraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875919D32C3D2F7300641B63 /* Attraction.swift */; };
 		875919D62C3D519400641B63 /* CityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875919D52C3D519400641B63 /* CityCard.swift */; };
+		875919D82C3D577300641B63 /* AttractionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875919D72C3D577300641B63 /* AttractionRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		875919D12C3D2E4200641B63 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		875919D32C3D2F7300641B63 /* Attraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attraction.swift; sourceTree = "<group>"; };
 		875919D52C3D519400641B63 /* CityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCard.swift; sourceTree = "<group>"; };
+		875919D72C3D577300641B63 /* AttractionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				875919D12C3D2E4200641B63 /* City.swift */,
 				875919D32C3D2F7300641B63 /* Attraction.swift */,
 				875919D52C3D519400641B63 /* CityCard.swift */,
+				875919D72C3D577300641B63 /* AttractionRow.swift */,
 			);
 			path = Guidebook;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			files = (
 				875919D02C3D2CAE00641B63 /* DataServices.swift in Sources */,
 				875919C02C3C5F2900641B63 /* CityView.swift in Sources */,
+				875919D82C3D577300641B63 /* AttractionRow.swift in Sources */,
 				875919D22C3D2E4200641B63 /* City.swift in Sources */,
 				875919D42C3D2F7300641B63 /* Attraction.swift in Sources */,
 				875919D62C3D519400641B63 /* CityCard.swift in Sources */,

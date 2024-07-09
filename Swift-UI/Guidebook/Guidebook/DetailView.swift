@@ -10,8 +10,26 @@ import SwiftUI
 struct DetailView: View {
     var attraction: Attraction
     var body: some View {
-        Image(attraction.imageName)
-        Text(attraction.longDescription)
+        VStack(spacing: 20){
+            Image(attraction.imageName)
+                .resizable()
+                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                .frame(height: 300)
+            ScrollView(showsIndicators: false){
+                VStack(alignment: .leading){
+                    Text(attraction.name)
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .bold()
+                    Text(attraction.longDescription)
+                        .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                        .padding(.bottom, 20)
+                        
+                }
+            }
+            .padding(.horizontal)
+        }
+        .ignoresSafeArea()
+        
     }
 }
 

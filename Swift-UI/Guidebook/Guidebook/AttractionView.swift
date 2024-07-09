@@ -13,7 +13,7 @@ struct AttractionView: View {
     var body: some View {
         
         NavigationStack{
-            ScrollView{
+            ScrollView(showsIndicators: false){
                 
                 VStack{
                     
@@ -21,13 +21,16 @@ struct AttractionView: View {
                         NavigationLink{
                             DetailView(attraction: attraction)
                         } label:{
-                            /*@START_MENU_TOKEN@*/Text(attraction.name)/*@END_MENU_TOKEN@*/
+                            AttractionRow(attraction: attraction)
+                                .padding(.bottom, 15)
                         }
+                        .buttonStyle(.plain)
                     }
                     
                 }
                 
             }
+            .padding(.horizontal)
         }
     }
 }
