@@ -29,7 +29,7 @@ struct CityView: View {
                     }
                     .ignoresSafeArea()
                     .onAppear{
-                        cities = dataServices.getData()
+                        cities = dataServices.getFieldData()
                     }
                 }
             }
