@@ -13,10 +13,10 @@ struct DataService {
     
     
     
-    func businessSearch() async{
+    func businessSearch() async -> [Business]{
         // Check if api exist
         guard apiKey != nil else{
-            return
+            return [Business]()
         }
         // 1. Create url
         if let url = URL(string: "https://api.yelp.com/v3/businesses/search?latitude=37.785834&longitude=-122.406417&catigories=restauranst&limit=10"){
@@ -26,18 +26,21 @@ struct DataService {
             request.addValue("application/json", forHTTPHeaderField: "accept")
             
             // 3. Send request
-            do{
-                let (data,response) =  try await URLSession.shared.data(for: request)
+            do {
+                let (data, _) = try await URLSession.shared.data(for: request)
                 
-                print(data)
-                print(response)
+                let decoder = JSONDecoder()
+                let result = try decoder.decode(BusinessSearch.self, from: data)
+                
+                // Print the result for debugging
+                return result.businesses
+            } catch {
+                print("Decoding error: \(error)")
             }
-            catch{
-                print (error)
-            }
+            
         }
         
-        
+        return [Business]()
         
         
     }
