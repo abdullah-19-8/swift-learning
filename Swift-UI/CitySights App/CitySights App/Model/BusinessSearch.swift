@@ -7,15 +7,17 @@
 
 import Foundation
 
-struct BusinessSearch: Codable {
-    var businesses: [Business]
-    var region: Region
-    var total: Int
+struct BusinessSearch: Decodable {
+    var businesses = [Business]()
+    var region = Region()
+    var total = 0
 }
 
-struct Region: Codable {
-    var center: Center?
+struct Region: Decodable {
+    var center: Coordinate?
 }
 
-
-
+struct Coordinate: Decodable {
+    var latitude: Double?
+    var longitude: Double?
+}

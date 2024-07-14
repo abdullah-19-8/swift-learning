@@ -7,81 +7,69 @@
 
 import Foundation
 
-struct Business: Codable {
-    let alias: String
-    let categories: [Category]
-    let coordinates: Center
-    let displayPhone: String
-    let distance: Double
-    let id: String
-    let imageURL: String
-    let isClosed: Bool
-    let location: Location
-    let name, phone, price: String
-    let rating, reviewCount: Int
-    let transactions: [String]
-    let url: String
-    let businessHours: BusinessHours
-
+struct Business: Decodable, Identifiable {
+    var id: String?
+    var alias: String?
+    var categories: [Category]
+    var coordinates: Coordinate?
+    var displayPhone: String?
+    var distance: Double?
+    var imageUrl: String?
+    var isClosed: Bool?
+    var location: Location?
+    var name: String?
+    var phone: String?
+    var price: String?
+    var rating: Double?
+    var reviewCount: Int?
+    var url: String?
+    
     enum CodingKeys: String, CodingKey {
-        case alias, categories, coordinates
+        
         case displayPhone = "display_phone"
-        case distance, id
-        case imageURL = "image_url"
         case isClosed = "is_closed"
-        case location, name, phone, price, rating
+        case imageUrl = "image_url"
         case reviewCount = "review_count"
-        case transactions, url
-        case businessHours = "business_hours"
+        
+        case id
+        case alias
+        case categories
+        case coordinates
+        case distance
+        case location
+        case name
+        case phone
+        case price
+        case rating
+        case url
+        
     }
 }
 
-
-struct Category: Codable {
-    let alias, title: String
+struct Category: Decodable {
+    var alias: String?
+    var title: String?
 }
 
-struct Location: Codable {
-    let address1, address2, address3, city: String
-    let country: String
-    let displayAddress: [String]
-    let state, zipCode: String
-
+struct Location: Decodable {
+    var address1: String?
+    var address2: String?
+    var address3: String?
+    var city: String?
+    var country: String?
+    var displayAddress: [String]?
+    var state: String?
+    var zipCode: String?
+    
     enum CodingKeys: String, CodingKey {
-        case address1, address2, address3, city, country
         case displayAddress = "display_address"
-        case state
         case zipCode = "zip_code"
+        
+        case address1
+        case address2
+        case address3
+        case city
+        case country
+        case state
     }
 }
-
-struct BusinessHours: Codable {
-    let businessHoursOpen: [Open]
-    let hoursType: String
-    let isOpenNow: Bool
-
-    enum CodingKeys: String, CodingKey {
-        case businessHoursOpen = "open"
-        case hoursType = "hours_type"
-        case isOpenNow = "is_open_now"
-    }
-}
-
-struct Open: Codable {
-    let isOvernight: Bool
-    let start, end, day: Int
-
-    enum CodingKeys: String, CodingKey {
-        case isOvernight = "is_overnight"
-        case start, end, day
-    }
-}
-
-
-
-struct Center: Codable {
-    let latitude, longitude: Double
-}
-
-
-
