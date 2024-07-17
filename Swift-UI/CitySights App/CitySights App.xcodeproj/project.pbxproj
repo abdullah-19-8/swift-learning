@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		871DE0222C47E90A0060EEB0 /* BusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871DE0212C47E90A0060EEB0 /* BusinessModel.swift */; };
 		8722BC072C42F33500357185 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8722BC062C42F33500357185 /* DataService.swift */; };
 		8734B4CC2C4437910080340F /* BusinessSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8734B4CB2C4437910080340F /* BusinessSearch.swift */; };
 		8734B4CE2C4437FA0080340F /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8734B4CD2C4437FA0080340F /* Business.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		871DE0212C47E90A0060EEB0 /* BusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessModel.swift; sourceTree = "<group>"; };
 		8722BC062C42F33500357185 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		8734B4CB2C4437910080340F /* BusinessSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSearch.swift; sourceTree = "<group>"; };
 		8734B4CD2C4437FA0080340F /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				87A0A89F2C3FD6B8008934B6 /* CitySights-App-Info.plist */,
 				87BACE242C3FCB87008BB514 /* CitySights_AppApp.swift */,
 				87BACE262C3FCB87008BB514 /* ContentView.swift */,
+				871DE0212C47E90A0060EEB0 /* BusinessModel.swift */,
 				8722BC062C42F33500357185 /* DataService.swift */,
 				877FE9E72C464FCF0028A94B /* BusinessDetailView.swift */,
 				87A0A89E2C3FD5B7008934B6 /* Config.xcconfig */,
@@ -175,6 +178,7 @@
 				8722BC072C42F33500357185 /* DataService.swift in Sources */,
 				877FE9E82C464FCF0028A94B /* BusinessDetailView.swift in Sources */,
 				8734B4CC2C4437910080340F /* BusinessSearch.swift in Sources */,
+				871DE0222C47E90A0060EEB0 /* BusinessModel.swift in Sources */,
 				87BACE272C3FCB87008BB514 /* ContentView.swift in Sources */,
 				8734B4CE2C4437FA0080340F /* Business.swift in Sources */,
 				8734B4D12C44AB670080340F /* TextHelper.swift in Sources */,
