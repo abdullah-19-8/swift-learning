@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		871F12982CD1933C00E8159D /* Scrumdinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrumdinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		871F12B22CD1963400E8159D /* Scrumdinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrumdinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		871F129A2CD1933C00E8159D /* Scrumdinger */ = {
+		871F12B42CD1963400E8159D /* Scrumdinger */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Scrumdinger;
 			sourceTree = "<group>";
@@ -19,7 +19,7 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		871F12952CD1933C00E8159D /* Frameworks */ = {
+		871F12AF2CD1963400E8159D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,18 +29,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		871F128F2CD1933C00E8159D = {
+		871F12A92CD1963400E8159D = {
 			isa = PBXGroup;
 			children = (
-				871F129A2CD1933C00E8159D /* Scrumdinger */,
-				871F12992CD1933C00E8159D /* Products */,
+				871F12B42CD1963400E8159D /* Scrumdinger */,
+				871F12B32CD1963400E8159D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		871F12992CD1933C00E8159D /* Products */ = {
+		871F12B32CD1963400E8159D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				871F12982CD1933C00E8159D /* Scrumdinger.app */,
+				871F12B22CD1963400E8159D /* Scrumdinger.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,64 +48,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		871F12972CD1933C00E8159D /* Scrumdinger */ = {
+		871F12B12CD1963400E8159D /* Scrumdinger */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 871F12A62CD1933D00E8159D /* Build configuration list for PBXNativeTarget "Scrumdinger" */;
+			buildConfigurationList = 871F12C02CD1963500E8159D /* Build configuration list for PBXNativeTarget "Scrumdinger" */;
 			buildPhases = (
-				871F12942CD1933C00E8159D /* Sources */,
-				871F12952CD1933C00E8159D /* Frameworks */,
-				871F12962CD1933C00E8159D /* Resources */,
+				871F12AE2CD1963400E8159D /* Sources */,
+				871F12AF2CD1963400E8159D /* Frameworks */,
+				871F12B02CD1963400E8159D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				871F129A2CD1933C00E8159D /* Scrumdinger */,
+				871F12B42CD1963400E8159D /* Scrumdinger */,
 			);
 			name = Scrumdinger;
 			packageProductDependencies = (
 			);
 			productName = Scrumdinger;
-			productReference = 871F12982CD1933C00E8159D /* Scrumdinger.app */;
+			productReference = 871F12B22CD1963400E8159D /* Scrumdinger.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		871F12902CD1933C00E8159D /* Project object */ = {
+		871F12AA2CD1963400E8159D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
-					871F12972CD1933C00E8159D = {
+					871F12B12CD1963400E8159D = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
-			buildConfigurationList = 871F12932CD1933C00E8159D /* Build configuration list for PBXProject "Scrumdinger" */;
+			buildConfigurationList = 871F12AD2CD1963400E8159D /* Build configuration list for PBXProject "Scrumdinger" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 871F128F2CD1933C00E8159D;
+			mainGroup = 871F12A92CD1963400E8159D;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 871F12992CD1933C00E8159D /* Products */;
+			productRefGroup = 871F12B32CD1963400E8159D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				871F12972CD1933C00E8159D /* Scrumdinger */,
+				871F12B12CD1963400E8159D /* Scrumdinger */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		871F12962CD1933C00E8159D /* Resources */ = {
+		871F12B02CD1963400E8159D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		871F12942CD1933C00E8159D /* Sources */ = {
+		871F12AE2CD1963400E8159D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,7 +125,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		871F12A42CD1933D00E8159D /* Debug */ = {
+		871F12BE2CD1963500E8159D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -188,7 +188,7 @@
 			};
 			name = Debug;
 		};
-		871F12A52CD1933D00E8159D /* Release */ = {
+		871F12BF2CD1963500E8159D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -244,7 +244,7 @@
 			};
 			name = Release;
 		};
-		871F12A72CD1933D00E8159D /* Debug */ = {
+		871F12C12CD1963500E8159D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -273,7 +273,7 @@
 			};
 			name = Debug;
 		};
-		871F12A82CD1933D00E8159D /* Release */ = {
+		871F12C22CD1963500E8159D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -305,25 +305,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		871F12932CD1933C00E8159D /* Build configuration list for PBXProject "Scrumdinger" */ = {
+		871F12AD2CD1963400E8159D /* Build configuration list for PBXProject "Scrumdinger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				871F12A42CD1933D00E8159D /* Debug */,
-				871F12A52CD1933D00E8159D /* Release */,
+				871F12BE2CD1963500E8159D /* Debug */,
+				871F12BF2CD1963500E8159D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		871F12A62CD1933D00E8159D /* Build configuration list for PBXNativeTarget "Scrumdinger" */ = {
+		871F12C02CD1963500E8159D /* Build configuration list for PBXNativeTarget "Scrumdinger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				871F12A72CD1933D00E8159D /* Debug */,
-				871F12A82CD1933D00E8159D /* Release */,
+				871F12C12CD1963500E8159D /* Debug */,
+				871F12C22CD1963500E8159D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 871F12902CD1933C00E8159D /* Project object */;
+	rootObject = 871F12AA2CD1963400E8159D /* Project object */;
 }
